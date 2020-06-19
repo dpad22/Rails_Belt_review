@@ -1,0 +1,70 @@
+<h1> <%= @event.name %> </h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+    <p>Host: <%= @event.user.fname %> <%= @event.user.lname %></p>
+    <p>Date: <%= @event.date.strftime('%B %d, %Y') %></p>
+    <p>Location: <%= @event.location %>, <%= @event.state %></p>
+
+    <p>People joining this event: <%= @event.attendees.length %></p>
+
+    <div class="container" id="attendee_table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <% @users.each do |user| %>
+
+            <tr>
+                <td><%= user.fname %> <%= user.lname %></td>
+                <td><%= user.location %></td>
+                <td><%= user.state %></td>
+            </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+
+        </div>
+        <div class="col-md">
+        <h4>Discussion about this event:</h4>
+
+            <textarea name="" id="event_comments" cols="65" rows="10">
+            <% @comments.each do |comment| %>
+
+            <%= comment.user.fname %> says: "<%= comment.content %>"
+
+            -------------------------------
+            
+            <% end %>
+            
+            
+            </textarea>
+
+
+            <div class="container">
+                <form action="/comments/new" method="post">
+
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+                    <input type="hidden" name="event_id" value="<%= @event.id %>">
+
+                    <div class="form-group">
+                        <p>Add Comment:</p>
+                        <textarea name="content" id="commentInput" cols="40" rows="4"></textarea>
+                    </div>
+                        <input type="submit" value="Submit Comment">
+
+                </form>
+            </div>
+        
+        </div>
+    </div>
+</div>

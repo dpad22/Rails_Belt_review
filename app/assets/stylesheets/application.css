@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+form p {
+    width: 60%;
+    display: inline-block;
+    text-align: left;
+}
+
+input{
+    display: block;
+}
+
+#register{
+    border: 2px solid black;
+    background-color: beige;
+}
+
+#login{
+    border: 2px solid black;
+    background-color: beige;
+    height: 60%;
+}
+
+#logout{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 9px;
+    margin-left: 6px;
+    opacity: .5;
+}
+
+#events_inState{
+    border: 5px solid black;
+}
+
+#attendee_table {
+    border: 5px solid black;
+    display: inline-block;
+    align-content: left;
+    width: 80%;
+}
+
+#event_comments {
+    margin-left: 15px;
+    overflow: scroll;
+    text-align: left;
+    
+}
+
+div p {
+    display: inline-block;
+    width: 50%;
+
+}
+
+h1 {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+h3 {
+    padding-top: 30px;
+}
+
+h4 {
+    padding-left: 40px;
+    display: inline-block;
+    padding-top: 30px;
+}
+.link:hover{
+    text-decoration: underline;
+}
+.link{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 9px;
+    margin-left: 6px;
+    /* opacity: .5; */
+}
